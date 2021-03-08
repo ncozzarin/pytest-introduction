@@ -5,7 +5,11 @@ from accum import Accumulator
 def accum():
     return Accumulator()
 
-def test_accumulator_init(accum):
+@pytest.fixture
+def accum2():
+    return Accumulator()
+
+def test_accumulator_init(accum,accum2):
     assert accum.count == 0
 
 def test_accumulator_add_one(accum):
